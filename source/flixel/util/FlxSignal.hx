@@ -8,7 +8,7 @@ import flixel.util.FlxDestroyUtil.IFlxDestroyable;
 typedef FlxSignal = FlxTypedSignal<Void->Void>;
 
 @:multiType
-abstract FlxTypedSignal<T>(IFlxSignal<T>)
+class FlxTypedSignal<T>(IFlxSignal<T>)
 {
 	public var dispatch(get, never):T;
 
@@ -263,7 +263,7 @@ class FlxSignal4<T1, T2, T3, T4> extends FlxBaseSignal<T1->T2->T3->T4->Void>
 	}
 }
 
-interface IFlxSignal<T> extends IFlxDestroyable
+class IFlxSignal<T> extends IFlxDestroyable
 {
 	var dispatch:T;
 	function add(listener:T):Void;
